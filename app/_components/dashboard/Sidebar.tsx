@@ -1,9 +1,11 @@
 'use client';
- 
+
 import React from 'react';
 import { Star, X } from 'lucide-react';
 import concepts from '@/data/concepts';
 import content from '@/data/contents';
+import Image from 'next/image';
+import { SidebarProps } from '@/types/sidebar';
 
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -29,31 +31,25 @@ const Sidebar: React.FC<SidebarProps> = ({
     >
       <div className="p-4 lg:p-6 border-b border-gray-200">
         <div className="flex items-center justify-between lg:justify-start">
-          <div>
-            <h1 className="text-xl lg:text-2xl font-bold text-gray-800">O&apos;zbekcha Vim</h1>
-            <p className="text-xs lg:text-sm text-gray-500 mt-1">Bosqichma-bosqich ko&apos;k choy ichib o&apos;rganamiz</p>
+          <div className="flex items-center gap-3">
+            <Image src="/logo.png" width={50} height={40} alt="logo" />
+            <div className="flex flex-col">
+              <span className="text-xl lg:text-2xl font-bold text-gray-800">
+                O&apos;zbekcha Vim
+              </span>
+              <p className="text-xs lg:text-sm text-gray-500 mt-1">
+                Bosqichma-bosqich, ko‘k choy ichib o‘rganamiz
+              </p>
+            </div>
           </div>
           <button
             onClick={() => setSidebarOpen(false)}
-            className="lg:hidden p-2 hover:bg-gray-100 rounded-lg"
+            className="lg:hidden p-2 hover:bg-gray-100 rounded-lg text-black cursor-pointer"
           >
             <X size={20} />
           </button>
         </div>
 
-        <div className="mt-4 p-3 bg-red-50 rounded-lg">
-          <div className="flex justify-between items-center mb-1">
-            <span className="text-xs font-semibold text-gray-600">Umumiy progress</span>
-            <span className="text-xs font-bold text-[#FC4850]">{totalProgress}%</span>
-          </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div
-              className="bg-[#FC4850] h-2 rounded-full transition-all duration-500"
-              style={{ width: `${totalProgress}%` }}
-            />
-          </div>
-          <p className="text-xs text-gray-500 mt-1">{completedTotal} / {totalLessons} dars</p>
-        </div>
       </div>
 
       <nav className="flex-1 overflow-y-auto p-3 lg:p-4">
@@ -70,11 +66,10 @@ const Sidebar: React.FC<SidebarProps> = ({
                 setSelectedConcept(concept.id);
                 setSidebarOpen(false);
               }}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 lg:py-3 rounded-lg mb-2 transition-all cursor-pointer ${
-                isActive
-                  ? 'bg-[#FC4850] text-white shadow-lg'
-                  : 'text-gray-700 hover:bg-red-50 hover:text-[#FC4850]'
-              }`}
+              className={`w-full flex items-center gap-3 px-3 py-2.5 lg:py-3 rounded-lg mb-2 transition-all cursor-pointer ${isActive
+                ? 'bg-[#FC4850] text-white shadow-lg'
+                : 'text-gray-700 hover:bg-red-50 hover:text-[#FC4850]'
+                }`}
             >
               <div className={`p-2 rounded-lg ${isActive ? 'bg-white/20' : 'bg-red-100'}`}>
                 <Icon size={18} className={isActive ? 'text-white' : 'text-[#FC4850]'} />
@@ -92,10 +87,26 @@ const Sidebar: React.FC<SidebarProps> = ({
         })}
       </nav>
 
-      <div className="p-4 border-t border-gray-200">
-        <div className="flex items-center gap-2 text-sm">
-          <Star size={16} className="text-[#FC4850]" />
-          <span className="text-gray-600">{favorites.size} sevimli</span>
+      {/* <div className="p-4 border-t border-gray-200"> */}
+      {/*   <div className="flex items-center gap-2 text-sm"> */}
+      {/*     <Star size={16} className="text-[#FC4850]" /> */}
+      {/*     <span className="text-gray-600">{favorites.size} sevimli</span> */}
+      {/*   </div> */}
+      {/* </div> */}
+
+      <div className="p-3">
+        <div className="mt-4 p-3 bg-red-50 rounded-lg">
+          <div className="flex justify-between items-center mb-1">
+            <span className="text-xs font-semibold text-gray-600">Umumiy progress</span>
+            <span className="text-xs font-bold text-[#FC4850]">{totalProgress}%</span>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-2">
+            <div
+              className="bg-[#FC4850] h-2 rounded-full transition-all duration-500"
+              style={{ width: `${totalProgress}%` }}
+            />
+          </div>
+          <p className="text-xs text-gray-500 mt-1">{completedTotal} / {totalLessons} dars</p>
         </div>
       </div>
     </aside>
