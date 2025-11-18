@@ -88,6 +88,7 @@ const Dashboard: React.FC = () => {
               <LessonCard
                 key={lesson.id}
                 lesson={lesson}
+                editor={currentContent.editor}
                 index={index}
                 isCompleted={completedLessons.has(lesson.id)}
                 isFavorite={favorites.has(lesson.id)}

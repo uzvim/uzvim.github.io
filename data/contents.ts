@@ -22,7 +22,7 @@ interface Content {
 const content: Content = {
   basics: {
     title: 'Vim asoslari',
-    editor: false,
+    editor: true,
     lessons: [
       {
         id: 'b1',

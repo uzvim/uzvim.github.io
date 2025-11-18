@@ -12,7 +12,8 @@ const LessonCard: React.FC<LessonCardProps> = ({
   toggleLesson,
   toggleFavorite,
   copyCommand,
-  copiedCommand
+  copiedCommand,
+  editor
 }) => {
   return (
     <article className="bg-white rounded-xl p-4 sm:p-6 border border-gray-200 transition-all">
@@ -85,7 +86,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
             </div>
           )}
 
-          {lesson.editor && <div className="bg-gray-50 rounded-lg p-3 lg:p-4 mb-4">
+          {editor && <div className="bg-gray-50 rounded-lg p-3 lg:p-4 mb-4">
             <h4 className="text-sm lg:text-base font-semibold text-gray-700 mb-3 flex items-center gap-2">
               <button
                 type="button"

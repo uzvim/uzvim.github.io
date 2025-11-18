@@ -20,6 +20,7 @@ interface LessonCardProps {
   toggleFavorite: (id: string) => void;
   copyCommand: (cmd: string) => void;
   copiedCommand: string;
+  editor: boolean;
 }
 
 export type { Command, Lesson, LessonCardProps }
