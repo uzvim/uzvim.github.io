@@ -85,7 +85,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
             </div>
           )}
 
-          <div className="bg-gray-50 rounded-lg p-3 lg:p-4 mb-4">
+          {lesson.editor && <div className="bg-gray-50 rounded-lg p-3 lg:p-4 mb-4">
             <h4 className="text-sm lg:text-base font-semibold text-gray-700 mb-3 flex items-center gap-2">
               <button
                 type="button"
@@ -99,7 +99,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
             </h4>
             <VimEditor />
           </div>
-
+          }
           <button
             onClick={() => toggleLesson(lesson.id)}
             className={`w-full sm:w-auto px-4 py-2.5 rounded-lg font-medium text-sm lg:text-base transition-all cursor-pointer ${isCompleted
