@@ -59,7 +59,7 @@ const Dashboard: React.FC = () => {
         <div className="w-10" />
       </div>
 
-      <div className="p-4 border-t border-gray-200 absolute top-2 right-3 rounded-xl bg-[#FC4850]">
+      <div className="p-3 border-t border-gray-200 absolute top-2 right-3 rounded-xl bg-[#FC4850] hover:bg-[#e03e45] cursor-pointer transition-all">
         <div className="flex items-center gap-2 text-sm text-white">
           <Star size={16} />
           <span>{favorites.size}</span>
