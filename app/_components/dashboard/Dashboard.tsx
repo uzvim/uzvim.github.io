@@ -1,12 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import Sidebar from './Sidebar';
 import LessonCard from './LessonCard';
 import content from '@/data/contents';
 import Tips from '../sections/Tips/Tips';
 import Resources from '../sections/Resources/Resources';
 import { Menu, Star } from 'lucide-react';
+import Sidebar from './sidebar/Sidebar';
 
 const Dashboard: React.FC = () => {
   const [selectedConcept, setSelectedConcept] = useState<string>('basics');
