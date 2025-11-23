@@ -27,54 +27,93 @@ const content: Content = {
       {
         id: 'b1',
         title: 'Vim nima?',
-        desc: 'Vim - bu kuchli matn muharriri bo\'lib, terminal va IDE larda ishlaydi',
+        desc: 'Terminalda ishlaydigan eng tezkor va kuchli matn muharriri',
         commands: [
-          { cmd: 'vim', desc: 'Vim ni ishga tushirish' },
-          { cmd: 'vim fayl.txt', desc: 'Faylni ochish' }
+          { cmd: 'vim', desc: 'Vimni ishga tushirish' },
+          { cmd: 'vim fayl.txt', desc: 'Fayl ochish' }
         ],
-        doc: 'Vim (Vi IMproved) 1991 yilda Bram Moolenaar tomonidan yaratilgan. U terminal asosida ishlaydigan va juda tez, kuchli matn muharriri hisoblanadi.'
+        doc: 'Vim – oddiy Notepad emas. Bu klaviatura bilan boshqariladigan super qurol. 1991-yilda Bram Moolenaar yaratgan va hali ham millionlab dasturchilarning asosiy vositasi.'
       },
       {
         id: 'b2',
-        title: 'Vim dan chiqish',
-        desc: 'Eng muhim buyruq - chiqish!',
+        title: 'Vimdan chiqish (hayotni saqlab qoluvchi dars)',
+        desc: 'Chiqa olmasang – hech narsa o‘rganmaysan',
         commands: [
-          { cmd: ':q', desc: 'Chiqish (agar o\'zgarishlar bo\'lmasa)' },
-          { cmd: ':q!', desc: 'Majburiy chiqish (o\'zgarishlarni saqlamasdan)' },
-          { cmd: ':wq', desc: 'Saqlash va chiqish' },
-          { cmd: ':x', desc: 'Saqlash va chiqish (qisqa yo\'l)' },
-          { cmd: 'ZZ', desc: 'Saqlash va chiqish (normal rejimda)' }
+          { cmd: ':q', desc: 'Oddiy chiqish' },
+          { cmd: ':q!', desc: 'Majburan chiqish (hammasini tashlab)' },
+          { cmd: ':wq', desc: 'Saqlab chiqish' },
+          { cmd: ':x', desc: 'Saqlab chiqish (qisqacha)' },
+          { cmd: 'ZZ', desc: 'Saqlab chiqish (Shift+Z+Z)' }
         ],
-        doc: 'Vim dan chiqish - bu yangi boshlovchilar uchun eng keng tarqalgan muammo. Esda tuting: ESC tugmasini bosing, keyin :q yozing!'
+        doc: 'Yangi odamlarning 99% birinchi marta ochib, chiqa olmay qoladi. ESC → :q → Enter. Mana shu bilan hayoting osonlashadi!'
       },
       {
         id: 'b3',
-        title: 'Yordam tizimi',
-        desc: 'Vim ning o\'rnatilgan yordam tizimi juda kuchli',
+        title: 'Yordam tizimi – :help',
+        desc: 'Vim o‘zida to‘liq qo‘llanma olib yuradi',
         commands: [
-          { cmd: ':help', desc: 'Asosiy yordam' },
-          { cmd: ':help dd', desc: 'Buyruq haqida yordam' },
-          { cmd: ':help modes', desc: 'Mavzu bo\'yicha yordam' },
-          { cmd: 'Ctrl+]', desc: 'Havolaga o\'tish (yordam ichida)' },
+          { cmd: ':help', desc: 'Umumiy yordam' },
+          { cmd: ':help dd', desc: 'Muayyan buyruq haqida' },
+          { cmd: ':help navigation', desc: 'Mavzu bo‘yicha' },
+          { cmd: 'Ctrl+]', desc: 'Havolaga o‘tish' },
           { cmd: 'Ctrl+o', desc: 'Orqaga qaytish' }
         ],
-        doc: 'Vim ning yordam tizimi hyperlink lar bilan to\'la. Har qanday buyruq yoki mavzu haqida :help <mavzu> orqali o\'rganishingiz mumkin.'
+        doc: 'Vimning :help’i – dunyodagi eng yaxshi darslik. Har narsani shu yerda topasan.'
       },
       {
         id: 'b4',
-        title: 'Konfiguratsiya fayli',
-        desc: 'Vim ni sozlash uchun .vimrc faylidan foydalaning',
+        title: '.vimrc – shaxsiy sozlamalaring',
+        desc: 'Vimni o‘zingga moslashtirish',
         commands: [
-          { cmd: ':e ~/.vimrc', desc: 'Konfiguratsiya faylini ochish' },
-          { cmd: ':source ~/.vimrc', desc: 'Konfiguratsiyani qayta yuklash' },
-          { cmd: 'set number', desc: 'Qator raqamlarini ko\'rsatish' },
-          { cmd: 'set relativenumber', desc: 'Nisbiy raqamlarni yoqish' },
-          { cmd: 'syntax on', desc: 'Sintaksis ranglashni yoqish' }
+          { cmd: ':e ~/.vimrc', desc: 'Sozlamalar faylini ochish' },
+          { cmd: ':source ~/.vimrc', desc: 'Sozlamalarni qayta yuklash' },
+          { cmd: 'set number', desc: 'Qator raqamlari' },
+          { cmd: 'set relativenumber', desc: 'Nisbiy raqamlar' },
+          { cmd: 'syntax on', desc: 'Kod ranglashi' }
         ],
-        doc: 'Linux/Mac da ~/.vimrc, Windows da ~/_vimrc fayli Vim sozlamalarini saqlaydi. Bu faylda barcha shaxsiy sozlamalaringizni yozishingiz mumkin.'
+        doc: 'Linux/Mac → ~/.vimrc, Windows → ~/_vimrc. Bu faylda Vimni o‘zingga qulay qilib sozlab olasan.'
       }
     ]
   },
+
+  neovim: {
+    title: "Neovim – Zamonaviy Vim (Birinchi qadam!)",
+    editor: false,
+    lessons: [
+      {
+        id: "neo1",
+        title: "Neovim nima va nega 2025-yilda faqat shuni o‘rganamiz?",
+        desc: "VS Code’dan 10 baravar tezroq va kuchliroq muharrir",
+        doc: "Neovim – Vimning yangi avlodi. 2014-yilda boshlangan, hozir butun dunyoda eng mashhur muharrir. Lua bilan sozlash, LSP (avto-to‘ldirish, xato ko‘rsatish), Tree-sitter (to‘g‘ri kod ranglashi), async ishlaydi. O‘zbek dasturchilarning 95%+ faqat Neovim ishlatadi. VS Code sekinlashganda – hammasi Neovimga o‘tadi!"
+      },
+      {
+        id: "neo2",
+        title: "NitroVim – Tayyor, chiroyli Neovim (2 daqiqada IDE tayyor!)",
+        desc: "Bitta buyruq – to‘liq zamonaviy IDE",
+        commands: [
+          { cmd: "winget install Neovim.Neovim", desc: "Windows – Neovim o‘rnatish" },
+          { cmd: "git clone https://github.com/usmonovshohruxmirzo/nitrovim \"$env:LOCALAPPDATA\\nvim\"", desc: "Windows PowerShell" },
+          { cmd: "git clone https://github.com/usmonovshohruxmirzo/nitrovim ~/.config/nvim", desc: "Linux / macOS" },
+          { cmd: "nvim", desc: "Birinchi marta och – pluginlar avto o‘rnatiladi" }
+        ],
+        doc: "Birinchi ochganda Lazy 2-3 daqiqada hamma narsani o‘rnatadi: LSP, Telescope, Tree-sitter, Git belgilari, chiroyli statusline, avto-to‘ldirish – hammasi tayyor! Keyin faqat kod yozasan."
+      },
+      {
+        id: "neo3",
+        title: "LSP – VS Code kabi funksiyalar Neovimda",
+        desc: "Endi xato yozib bo‘lmaydi",
+        commands: [
+          { cmd: "gd", desc: "Funksiya/o‘zgaruvchi ta’rifiga o‘tish" },
+          { cmd: "K", desc: "Hover – hujjat ko‘rish" },
+          { cmd: "gr", desc: "Bu nom qayerda ishlatilgan?" },
+          { cmd: "<leader>rn", desc: "O‘zgaruvchi nomini o‘zgartirish" },
+          { cmd: "<leader>ca", desc: "Avto-tuzatish takliflari" }
+        ],
+        doc: "JavaScript, TypeScript, Python, Go, Rust – hammasida ishlaydi. NitroVim’da hammasi oldindan sozlangan!"
+      }
+    ]
+  },
+
   nitrovim: {
     title: 'NitroVim o‘rnatish',
     editor: false,
@@ -82,471 +121,370 @@ const content: Content = {
       {
         id: 'i1',
         title: 'NitroVim nima?',
-        desc: 'NitroVim — bu kuchli, yuqori optimizatsiyalangan Vim distributsiya.',
-        doc: 'NitroVim — bu tezlik, soddalik va samaradorlikka yo‘naltirilgan shaxsiy Vim distributsiyasi. Unda pluginlar, performant konfiguratsiya va shaxsiy sozlamalar mavjud.'
+        desc: 'Tez, zamonaviy va chiroyli Vim konfiguratsiyasi',
+        doc: 'NitroVim – men shaxsiy ishlatadigan, eng tezkor va qulay Vim/Neovim sozlamasi. Tayyor pluginlar, LSP, Tree-sitter va chiroyli ko‘rinish – hammasi bir joyda.'
       },
       {
         id: 'i2',
-        title: 'O‘rnatish',
-        desc: 'Windows va Unix tizimlarida NitroVimni o‘rnatish juda oson.',
+        title: 'O‘rnatish (2 daqiqada)',
+        desc: 'Bitta buyruq bilan tayyor',
         commands: [
-          { cmd: 'winget install Neovim.Neovim', desc: 'Neovim ni o\'rnatish' },
+          { cmd: 'winget install Neovim.Neovim', desc: 'Windows – Neovim o‘rnatish' },
           { cmd: 'git clone https://github.com/usmonovshohruxmirzo/nitrovim "$env:LOCALAPPDATA\\nvim"', desc: 'Windows (PowerShell)' },
-          { cmd: 'git clone https://github.com/usmonovshohruxmirzo/nitrovim ~/.config/nvim', desc: 'Linux/MacOS' },
-          { cmd: 'nvim', desc: 'NitroVim ishga tushirish' }
+          { cmd: 'git clone https://github.com/usmonovshohruxmirzo/nitrovim ~/.config/nvim', desc: 'Linux / macOS' },
+          { cmd: 'nvim', desc: 'Ishga tushirish – birinchi marta pluginlar o‘rnatiladi' }
         ],
-        doc: 'Unix tizimlarda NitroVim avtomatik tarzda ~/.config/nvim yoki ~/.vim kataloglariga o‘rnatiladi. Skript barcha pluginlarni o‘rnatadi va konfiguratsiyani sozlaydi.'
+        doc: 'O‘rnatgandan keyin bir marta nvim och – Lazy avtomatik barcha pluginlarni o‘rnating. Keyin endi faqat ishla!'
       }
-    ],
+    ]
   },
+
   modes: {
     title: 'Vim rejimlari',
     editor: false,
     lessons: [
       {
         id: 'm1',
-        title: 'Normal rejim',
-        desc: 'Default rejim - kursorni harakatlantirish va buyruqlar',
+        title: 'Normal rejim – asosiy rejim',
+        desc: 'Bu yerda matn yozmaysan, buyruq berasan',
         commands: [
-          { cmd: 'ESC', desc: 'Normal rejimga qaytish' },
-          { cmd: 'i', desc: 'Insert rejimga o\'tish' },
-          { cmd: 'v', desc: 'Visual rejimga o\'tish' },
-          { cmd: ':', desc: 'Command rejimga o\'tish' }
+          { cmd: 'ESC', desc: 'Har doim Normal rejimga qaytish' },
+          { cmd: 'i', desc: 'Insert rejimga kirish' },
+          { cmd: 'v', desc: 'Visual rejim' },
+          { cmd: ':', desc: 'Command rejim' }
         ],
-        doc: 'Normal rejim - Vim ning asosiy rejimi. Bu yerda siz kursorni harakatlantirasiz va buyruqlarni bajarasiz. Matn kiritish uchun emas!'
+        doc: 'Normal rejim – Vimning yuragi. Bu yerda klaviatura sehrli bo‘lib qoladi.'
       },
       {
         id: 'm2',
-        title: 'Insert rejim',
-        desc: 'Matn kiritish rejimi',
+        title: 'Insert rejim – oddiy yozish',
+        desc: 'Bu yerda oddiy Notepad kabi yozasan',
         commands: [
-          { cmd: 'i', desc: 'Kursor oldidan kiritish' },
-          { cmd: 'a', desc: 'Kursor keyin kiritish' },
-          { cmd: 'I', desc: 'Qator boshidan kiritish' },
-          { cmd: 'A', desc: 'Qator oxiridan kiritish' },
-          { cmd: 'o', desc: 'Pastda yangi qator ochish' },
-          { cmd: 'O', desc: 'Yuqorida yangi qator ochish' }
+          { cmd: 'i', desc: 'Kursor oldidan' },
+          { cmd: 'a', desc: 'Kursor keyin' },
+          { cmd: 'I', desc: 'Qator boshi' },
+          { cmd: 'A', desc: 'Qator oxiri' },
+          { cmd: 'o', desc: 'Pastda yangi qator' },
+          { cmd: 'O', desc: 'Yuqorida yangi qator' }
         ],
-        doc: 'Insert rejimda Vim oddiy matn muharririga o\'xshaydi. ESC bilan normal rejimga qaytasiz.'
+        doc: 'Insert rejimda bo‘lganingda – oddiy odam bo‘lasan. Normal rejimda – superqahramon.'
       },
       {
         id: 'm3',
-        title: 'Visual rejim',
-        desc: 'Matnni belgilash va ustida amallar bajarish',
+        title: 'Visual rejim – matn belgilash',
+        desc: 'Matnni kursormi sichqoncha kabi belgilaysan',
         commands: [
-          { cmd: 'v', desc: 'Belgidan-belgiga belgilash' },
-          { cmd: 'V', desc: 'Qatordan-qatorga belgilash' },
-          { cmd: 'Ctrl+v', desc: 'Blok rejimda belgilash' },
-          { cmd: 'gv', desc: 'Oldingi belgilanganini qayta tanlash' }
+          { cmd: 'v', desc: 'Belgidan belgiga' },
+          { cmd: 'V', desc: 'To‘liq qatorlar' },
+          { cmd: 'Ctrl+v', desc: 'Blok (ustun) belgilash' },
+          { cmd: 'gv', desc: 'Oldin belgilagan joyni qayta tanlash' }
         ],
-        doc: 'Visual rejimda matnni belgilab, keyin ustida turli amallar (o\'chirish, nusxa olish, o\'zgartirish) bajarishingiz mumkin.'
+        doc: 'Visual rejimda belgilab, keyin d, y, c kabi buyruqlar berasan.'
       },
       {
         id: 'm4',
-        title: 'Command rejim',
-        desc: 'Ex buyruqlarini bajarish',
+        title: 'Command rejim – Ex buyruqlar',
+        desc: ': bilan boshlanadigan kuchli buyruqlar',
         commands: [
-          { cmd: ':w', desc: 'Faylni saqlash' },
+          { cmd: ':w', desc: 'Saqlash' },
           { cmd: ':q', desc: 'Chiqish' },
-          { cmd: ':wq', desc: 'Saqlash va chiqish' },
-          { cmd: ':e fayl.txt', desc: 'Faylni ochish' },
-          { cmd: ':%s/old/new/g', desc: 'Matnni almashtirish' }
+          { cmd: ':e fayl.js', desc: 'Yangi fayl ochish' },
+          { cmd: ':%s/esa/ham/g', desc: 'Hammasini almashtirish' }
         ],
-        doc: 'Command rejim : belgisi bilan boshlanadi. Bu yerda fayl operatsiyalari, sozlamalar va boshqa buyruqlarni bajarasiz.'
+        doc: 'Bu rejimda Vim to‘liq terminal buyruq interpretatoriga aylanadi.'
       }
     ]
   },
+
   navigation: {
-    title: 'Navigatsiya',
-    editor: false,
+    title: 'Navigatsiya – kursorni uchar qilish',
+    editor: true,
     lessons: [
       {
         id: 'n1',
-        title: 'Asosiy harakatlar',
-        desc: 'Klaviatura bilan tez harakatlanish',
+        title: 'Asosiy harakat – hjkl',
+        desc: 'Sichqonchani unut!',
         commands: [
-          { cmd: 'h', desc: 'Chapga' },
-          { cmd: 'j', desc: 'Pastga' },
-          { cmd: 'k', desc: 'Yuqoriga' },
-          { cmd: 'l', desc: 'O\'ngga' },
+          { cmd: 'h', desc: 'Chap' },
+          { cmd: 'j', desc: 'Past' },
+          { cmd: 'k', desc: 'Yuqori' },
+          { cmd: 'l', desc: 'O‘ng' },
           { cmd: '5j', desc: '5 qator pastga' },
           { cmd: '10k', desc: '10 qator yuqoriga' }
         ],
-        doc: 'hjkl - Vim ning asosiy navigatsiya tugmalari. Raqam + buyruq bilan harakatni takrorlashingiz mumkin.'
+        doc: 'Birinchi haftada hjkl ni yodla, keyin sichqonchani tashlab yuborasan.'
       },
       {
         id: 'n2',
-        title: 'So\'zlar bo\'yicha',
-        desc: 'So\'zlar orasida tez sakrash',
+        title: 'So‘zlar orasida sakrash',
+        desc: 'w b e – eng tez harakat',
         commands: [
-          { cmd: 'w', desc: 'Keyingi so\'z boshiga' },
-          { cmd: 'b', desc: 'Oldingi so\'z boshiga' },
-          { cmd: 'e', desc: 'So\'z oxiriga' },
-          { cmd: 'W', desc: 'Keyingi katta so\'zga (whitespace ajratadi)' },
-          { cmd: 'B', desc: 'Oldingi katta so\'zga' }
+          { cmd: 'w', desc: 'Keyingi so‘z boshi' },
+          { cmd: 'b', desc: 'Oldingi so‘z boshi' },
+          { cmd: 'e', desc: 'So‘z oxiri' },
+          { cmd: 'W B E', desc: 'Katta so‘zlar (vergul, nuqta bilan ajratilgan)' }
         ],
-        doc: 'So\'zlar bo\'yicha harakatlanish juda tez. w/b - oddiy so\'zlar, W/B - belgilar bilan ajratilgan so\'zlar.'
+        doc: 'Kod yozganda 90% harakat w va b bilan bo‘ladi.'
       },
       {
         id: 'n3',
-        title: 'Qator bo\'yicha',
-        desc: 'Qator ichida navigatsiya',
+        title: 'Qator ichida sakrash',
+        desc: '0 $ ^ f t – qator ichidagi ninja harakatlar',
         commands: [
-          { cmd: '0', desc: 'Qator boshiga' },
-          { cmd: '$', desc: 'Qator oxiriga' },
-          { cmd: '^', desc: 'Birinchi bo\'sh bo\'lmagan belgiga' },
-          { cmd: 'g_', desc: 'Oxirgi bo\'sh bo\'lmagan belgiga' },
-          { cmd: 'f<char>', desc: 'Keyingi <char> belgiga' },
-          { cmd: 't<char>', desc: '<char> dan oldingi belgiga' }
+          { cmd: '0', desc: 'Qator boshi' },
+          { cmd: '$', desc: 'Qator oxiri' },
+          { cmd: '^', desc: 'Birinchi harf' },
+          { cmd: 'f)', desc: 'Keyingi ) ga sakrash' },
+          { cmd: 't"', desc: '" dan oldinga' },
+          { cmd: ';', desc: 'f/t ni takrorlash' },
+          { cmd: ',', desc: 'Teskarisiga' }
         ],
-        doc: 'Qator ichida tez harakatlanish uchun 0, $, ^ va f/t buyruqlaridan foydalaning.'
+        doc: 'f va t – qator ichidagi eng kuchli qurol. ; bilan takrorla – 1 soniyada 50 belgi o‘tib ketasan.'
       },
       {
         id: 'n4',
-        title: 'Fayl bo\'yicha',
-        desc: 'Fayl bo\'ylab tez sakrash',
+        title: 'Fayl bo‘ylab sakrash',
+        desc: 'gg G Ctrl+u/d – katta fayllar uchun',
         commands: [
-          { cmd: 'gg', desc: 'Fayl boshiga' },
-          { cmd: 'G', desc: 'Fayl oxiriga' },
+          { cmd: 'gg', desc: 'Fayl boshi' },
+          { cmd: 'G', desc: 'Fayl oxiri' },
           { cmd: '50G', desc: '50-qatorga' },
-          { cmd: ':50', desc: '50-qatorga (command rejim)' },
-          { cmd: 'Ctrl+u', desc: 'Yarim sahifa yuqoriga' },
-          { cmd: 'Ctrl+d', desc: 'Yarim sahifa pastga' },
-          { cmd: 'Ctrl+f', desc: 'To\'liq sahifa oldinga' },
-          { cmd: 'Ctrl+b', desc: 'To\'liq sahifa orqaga' }
+          { cmd: 'Ctrl+u', desc: 'Yarim sahifa yuqori' },
+          { cmd: 'Ctrl+d', desc: 'Yarim sahifa past' }
         ],
-        doc: 'Katta fayllarda navigatsiya uchun gg/G va Ctrl bilan birgalikda foydalaning.'
+        doc: '10000 qatorlik faylda ham 1 soniyada kerakli joyga yetib borasan.'
       }
     ]
   },
+
   editing: {
-    editor: false,
-    title: 'Tahrirlash',
+    title: 'Tahrirlash – Vimning sehrli joyi',
+    editor: true,
     lessons: [
       {
         id: 'e1',
-        title: 'O\'chirish',
-        desc: 'Matn o\'chirish buyruqlari',
+        title: 'O‘chirish – delete',
+        desc: 'x dd dw D – hammasi o‘chadi',
         commands: [
-          { cmd: 'x', desc: 'Belgi o\'chirish' },
-          { cmd: 'dd', desc: 'Qatorni o\'chirish' },
-          { cmd: 'dw', desc: 'So\'zni o\'chirish' },
-          { cmd: 'd$', desc: 'Qator oxirigacha o\'chirish' },
-          { cmd: 'D', desc: 'Qator oxirigacha o\'chirish (qisqa)' },
-          { cmd: '5dd', desc: '5 ta qatorni o\'chirish' }
+          { cmd: 'x', desc: 'Bitta belgi' },
+          { cmd: 'dd', desc: 'To‘liq qator' },
+          { cmd: 'dw', desc: 'So‘z' },
+          { cmd: 'd$', desc: 'Qator oxirigacha' },
+          { cmd: 'D', desc: 'Qator oxirigacha (qisqa)' },
+          { cmd: '5dd', desc: '5 qator' }
         ],
-        doc: 'd - delete buyruqi. Harakat buyruqlari bilan birgalikda ishlatiladi: dw (so\'zni o\'chir), dd (qatorni o\'chir).'
+        doc: 'd + harakat = o‘chirish. dw, db, d$, d^, df), dt) – hammasi ishlaydi!'
       },
       {
         id: 'e2',
         title: 'Nusxa olish va joylashtirish',
-        desc: 'Copy-paste operatsiyalari',
+        desc: 'yy p P – copy-paste Vim uslubida',
         commands: [
-          { cmd: 'yy', desc: 'Qatorni nusxa olish' },
-          { cmd: 'yw', desc: 'So\'zni nusxa olish' },
-          { cmd: 'y$', desc: 'Qator oxirigacha nusxa' },
-          { cmd: 'p', desc: 'Kursor keyin joylashtirish' },
-          { cmd: 'P', desc: 'Kursor oldin joylashtirish' },
-          { cmd: '"ayy', desc: 'Qatorni a registeriga nusxa' },
-          { cmd: '"ap', desc: 'a registeridan joylashtirish' }
+          { cmd: 'yy', desc: 'Qator nusxa' },
+          { cmd: 'yw', desc: 'So‘z nusxa' },
+          { cmd: 'y$', desc: 'Qator oxirigacha' },
+          { cmd: 'p', desc: 'Kursor keyin' },
+          { cmd: 'P', desc: 'Kursor oldin' }
         ],
-        doc: 'y - yank (nusxa), p - paste (joylashtirish). Visual rejimda belgilab y bosing, keyin p bilan joylashtiring.'
+        doc: 'Visual rejimda belgilab y bos → nusxa ol. p bilan joylashtir.'
       },
       {
         id: 'e3',
-        title: 'O\'zgartirish',
-        desc: 'Matnni o\'zgartirish',
+        title: 'O‘zgartirish – change',
+        desc: 'c + harakat = o‘chir + insert',
         commands: [
-          { cmd: 'cw', desc: 'So\'zni o\'zgartirish' },
-          { cmd: 'cc', desc: 'Qatorni o\'zgartirish' },
-          { cmd: 'C', desc: 'Qator oxirigacha o\'zgartirish' },
-          { cmd: 'r', desc: 'Bitta belgini almashtirish' },
-          { cmd: 'R', desc: 'Replace rejimi' },
-          { cmd: '~', desc: 'Katta/kichik harfga o\'zgartirish' }
+          { cmd: 'cw', desc: 'So‘zni o‘zgartir' },
+          { cmd: 'cc', desc: 'To‘liq qator' },
+          { cmd: 'ciw', desc: 'Kursor ostidagi so‘z (joyidan qatʼiy nazar)' },
+          { cmd: 'ci"', desc: 'Qo‘shtirnoq ichidagi matn' },
+          { cmd: 'ci(', desc: 'Qavs ichidagi matn' },
+          { cmd: 'r', desc: 'Bitta belgi almashtirish' },
+          { cmd: '~', desc: 'Katta/kichik harf' }
         ],
-        doc: 'c - change buyruqi. O\'chiradi va insert rejimga o\'tadi. cw - so\'zni o\'zgartirish, cc - qatorni o\'zgartirish.'
+        doc: 'ciw – eng sevgan buyruqlarimdan biri. So‘z o‘rtasida tursang ham ishlaydi!'
       },
       {
         id: 'e4',
-        title: 'Bekor qilish va qaytarish',
-        desc: 'Undo va redo operatsiyalari',
+        title: 'Undo/Redo va nuqta (.)',
+        desc: 'u Ctrl+r . – Vimning eng kuchli 3 tugmasi',
         commands: [
-          { cmd: 'u', desc: 'Bekor qilish (undo)' },
-          { cmd: 'Ctrl+r', desc: 'Qaytarish (redo)' },
-          { cmd: 'U', desc: 'Qatorni asl holatiga qaytarish' },
-          { cmd: '.', desc: 'Oxirgi o\'zgarishni takrorlash' },
-          { cmd: '10.', desc: 'Oxirgi o\'zgarishni 10 marta takrorlash' }
+          { cmd: 'u', desc: 'Bekor qilish' },
+          { cmd: 'Ctrl+r', desc: 'Qaytarish' },
+          { cmd: '.', desc: 'Oxirgi o‘zgarishni takrorlash' },
+          { cmd: '5.', desc: '5 marta takrorlash' }
         ],
-        doc: '. (nuqta) - Vim ning eng kuchli xususiyatlaridan biri. Oxirgi o\'zgarishni takrorlaydi.'
+        doc: 'Nuqta (.) – Vimning haqiqiy super quroli. Bir marta to‘g‘ri qil, keyin . bosaver!'
       }
     ]
   },
+
   search: {
     title: 'Qidiruv va almashtirish',
-    editor: false,
+    editor: true,
     lessons: [
       {
         id: 's1',
-        title: 'Qidiruv',
-        desc: 'Faylda qidiruv',
+        title: 'Oddiy qidiruv',
+        desc: '/ va ? – faylda izlash',
         commands: [
-          { cmd: '/matn', desc: 'Oldinga qidirish' },
-          { cmd: '?matn', desc: 'Orqaga qidirish' },
-          { cmd: 'n', desc: 'Keyingi natija' },
-          { cmd: 'N', desc: 'Oldingi natija' },
-          { cmd: '*', desc: 'Kursor ostidagi so\'zni qidirish (oldinga)' },
-          { cmd: '#', desc: 'Kursor ostidagi so\'zni qidirish (orqaga)' }
+          { cmd: '/salom', desc: 'Oldinga qidirish' },
+          { cmd: '?salom', desc: 'Orqaga qidirish' },
+          { cmd: 'n', desc: 'Keyingi' },
+          { cmd: 'N', desc: 'Oldingi' },
+          { cmd: '*', desc: 'Kursor ostidagi so‘zni qidir' },
+          { cmd: '#', desc: 'Orqaga qidir' }
         ],
-        doc: 'Qidiruvda regex (regular expressions) ishlatishingiz mumkin. /\\<word\\> - faqat to\'liq so\'zni topadi.'
+        doc: '* – eng qulay buyruq. So‘z ustida tur → * bos → hamma joyda topadi.'
       },
       {
         id: 's2',
         title: 'Almashtirish',
-        desc: 'Matnni topish va almashtirish',
+        desc: ':%s – global almashtirish',
         commands: [
-          { cmd: ':%s/old/new/g', desc: 'Barcha faylda almashtirish' },
-          { cmd: ':s/old/new/g', desc: 'Joriy qatorda almashtirish' },
-          { cmd: ':%s/old/new/gc', desc: 'Tasdiqlash bilan almashtirish' },
-          { cmd: ':10,20s/old/new/g', desc: '10-20 qatorlarda almashtirish' },
-          { cmd: ":'<,'>s/old/new/g", desc: 'Belgilangan joyda almashtirish' }
+          { cmd: ':%s/esa/ham/g', desc: 'Hammasini almashtir' },
+          { cmd: ':s/esa/ham/g', desc: 'Faqat joriy qatorda' },
+          { cmd: ':%s/esa/ham/gc', desc: 'Tasdiqlab almashtir' }
         ],
-        doc: 's - substitute buyruqi. g - global (qatordagi barcha), c - confirm (tasdiqlash bilan).'
+        doc: 'gc – confirm. Har bir o‘zgarishni ko‘rib, y/n bosasan.'
       },
       {
         id: 's3',
-        title: 'Belgi qidirish',
-        desc: 'Qator ichida belgi topish',
+        title: 'f t – qator ichida ninja',
+        desc: 'Eng tez navigatsiya',
         commands: [
-          { cmd: 'f<char>', desc: 'Keyingi <char> belgiga' },
-          { cmd: 'F<char>', desc: 'Oldingi <char> belgiga' },
-          { cmd: 't<char>', desc: '<char> dan oldingi belgiga' },
-          { cmd: 'T<char>', desc: '<char> dan keyingi belgiga (orqaga)' },
-          { cmd: ';', desc: 'Harakatni takrorlash' },
-          { cmd: ',', desc: 'Harakatni teskari takrorlash' }
+          { cmd: 'f)', desc: 'Keyingi ) ga' },
+          { cmd: 't)', desc: ') dan oldinga' },
+          { cmd: 'F(', desc: 'Oldingi (' },
+          { cmd: ';', desc: 'Takrorlash' },
+          { cmd: ',', desc: 'Teskarisiga' }
         ],
-        doc: 'f/t buyruqlari qator ichida juda tez navigatsiya imkonini beradi. ; bilan takrorlang.'
+        doc: 'Bir qator ichida 50 belgi o‘tish uchun 0.3 soniya yetadi.'
       }
     ]
   },
+
   files: {
-    title: 'Fayl bilan ishlash',
+    title: 'Fayl va bufferlar bilan ishlash',
     editor: false,
     lessons: [
       {
         id: 'f1',
         title: 'Saqlash va ochish',
-        desc: 'Fayl operatsiyalari',
+        desc: ':w :e :q – asosiy fayl buyruqlari',
         commands: [
-          { cmd: ':w', desc: 'Faylni saqlash' },
-          { cmd: ':w fayl.txt', desc: 'Yangi nom bilan saqlash' },
-          { cmd: ':w!', desc: 'Majburiy saqlash' },
-          { cmd: ':e fayl.txt', desc: 'Faylni ochish' },
-          { cmd: ':e!', desc: 'Qayta yuklash (o\'zgarishlarni bekor qilish)' },
-          { cmd: ':r fayl.txt', desc: 'Fayl mazmunini qo\'shish' }
+          { cmd: ':w', desc: 'Saqlash' },
+          { cmd: ':w yangi.txt', desc: 'Yangi nom bilan' },
+          { cmd: ':e fayl.js', desc: 'Yangi fayl ochish' },
+          { cmd: ':e!', desc: 'O‘zgarishlarni bekor qilib qayta yuklash' }
         ],
-        doc: 'w - write (saqlash), e - edit (ochish). ! belgisi majburiy bajarishni bildiradi.'
+        doc: '! – majburiy bajarish belgisi.'
       },
       {
         id: 'f2',
-        title: 'Buffer lar',
-        desc: 'Ochiq fayllar bilan ishlash',
+        title: 'Bufferlar – ochiq fayllar',
+        desc: 'Bir vaqtda 50 ta fayl ochib ishla!',
         commands: [
-          { cmd: ':ls', desc: 'Barcha bufferlarni ko\'rsatish' },
-          { cmd: ':b<n>', desc: 'n-bufferga o\'tish' },
-          { cmd: ':bn', desc: 'Keyingi bufferga' },
-          { cmd: ':bp', desc: 'Oldingi bufferga' },
-          { cmd: ':bd', desc: 'Bufferni yopish' },
-          { cmd: ':ball', desc: 'Barcha bufferlarni ochish' }
+          { cmd: ':ls', desc: 'Barcha bufferlar' },
+          { cmd: ':b 5', desc: '5-buffer' },
+          { cmd: ':bn', desc: 'Keyingi' },
+          { cmd: ':bp', desc: 'Oldingi' },
+          { cmd: ':bd', desc: 'Yopish' }
         ],
-        doc: 'Bufferlar - bu xotirada ochiq fayllar. Bir vaqtning o\'zida ko\'plab fayllar bilan ishlashingiz mumkin.'
+        doc: 'Tablar emas, bufferlar – Vimning haqiqiy kuchi.'
       },
       {
         id: 'f3',
-        title: 'Oynalar (Windows)',
-        desc: 'Ekranni bo\'lish',
+        title: 'Oynalar (split)',
+        desc: 'Ekranni bo‘lib ishla',
         commands: [
-          { cmd: ':split', desc: 'Gorizontal bo\'lish' },
-          { cmd: ':vsplit', desc: 'Vertikal bo\'lish' },
-          { cmd: 'Ctrl+w w', desc: 'Keyingi oynaga o\'tish' },
-          { cmd: 'Ctrl+w h/j/k/l', desc: 'Yo\'nalish bo\'yicha o\'tish' },
-          { cmd: 'Ctrl+w q', desc: 'Oynani yopish' },
-          { cmd: 'Ctrl+w =', desc: 'Oynalarni teng qilish' }
+          { cmd: ':split', desc: 'Gorizontal' },
+          { cmd: ':vsplit', desc: 'Vertikal' },
+          { cmd: 'Ctrl+w h/j/k/l', desc: 'Oynalar orasida harakat' },
+          { cmd: 'Ctrl+w q', desc: 'Oynani yopish' }
         ],
-        doc: 'Oynalar ekranni bo\'lib, bir vaqtda bir nechta fayllarni ko\'rishga imkon beradi.'
-      },
-      {
-        id: 'f4',
-        title: 'Tab lar',
-        desc: 'Tab larda ishlash',
-        commands: [
-          { cmd: ':tabnew', desc: 'Yangi tab ochish' },
-          { cmd: ':tabedit fayl.txt', desc: 'Faylni yangi tabda ochish' },
-          { cmd: 'gt', desc: 'Keyingi tabga' },
-          { cmd: 'gT', desc: 'Oldingi tabga' },
-          { cmd: ':tabclose', desc: 'Tabni yopish' },
-          { cmd: ':tabonly', desc: 'Faqat joriy tabni qoldirish' }
-        ],
-        doc: 'Tab lar - bu alohida ish joylar. Browser tab lariga o\'xshaydi.'
+        doc: 'Bir ekranda ikkita fayl – taqqoslash uchun ideal.'
       }
     ]
   },
+
   advanced: {
-    title: 'Ilg\'or imkoniyatlar',
-    editor: false,
+    title: 'Ilg‘or imkoniyatlar',
+    editor: true,
     lessons: [
       {
         id: 'a1',
-        title: 'Makrolar',
-        desc: 'Harakatlarni yozish va takrorlash',
+        title: 'Makrolar – avtomatlashtirish',
+        desc: 'Takrorlanadigan ishni bir marta yoz, ming marta ishlat',
         commands: [
-          { cmd: 'qa', desc: 'a registeriga makro yozishni boshlash' },
-          { cmd: 'q', desc: 'Yozishni to\'xtatish' },
-          { cmd: '@a', desc: 'a makrosini bajarish' },
+          { cmd: 'qa', desc: 'a registriga yozishni boshlash' },
+          { cmd: 'q', desc: 'To‘xtatish' },
+          { cmd: '@a', desc: 'Bajarish' },
           { cmd: '@@', desc: 'Oxirgi makroni takrorlash' },
-          { cmd: '100@a', desc: 'Makroni 100 marta bajarish' }
+          { cmd: '50@a', desc: '50 marta bajarish' }
         ],
-        doc: 'Makrolar - takrorlanadigan vazifalarni avtomatlashtirish uchun eng kuchli vosita. Bir marta yozib, ko\'p marta ishlating!'
+        doc: 'Makrolar – Vimning eng katta sirlari biri.'
       },
       {
         id: 'a2',
-        title: 'Registers',
-        desc: 'Ma\'lumotlarni saqlash joylari',
+        title: 'Registers – nusxalash joylari',
+        desc: '"a "b "+ – turli xil buferlar',
         commands: [
-          { cmd: '"ayy', desc: 'Qatorni a registeriga nusxa olish' },
-          { cmd: '"ap', desc: 'a registeridan joylashtirish' },
-          { cmd: ':reg', desc: 'Barcha registerlarni ko\'rish' },
-          { cmd: '"+y', desc: 'Sistema clipboard ga nusxa' },
-          { cmd: '"+p', desc: 'Sistema clipboard dan joylashtirish' }
+          { cmd: '"ayy', desc: 'a registriga nusxa' },
+          { cmd: '"ap', desc: 'a registridan joylashtirish' },
+          { cmd: '"+yy', desc: 'Sistema clipboard' },
+          { cmd: ':reg', desc: 'Barcha registerlarni ko‘rish' }
         ],
-        doc: 'Vim da 26 ta nomlangan register (a-z) va maxsus registerlar bor. "+ - sistema clipboard.'
+        doc: '"+ – Windows/Linux clipboard bilan aloqa.'
       },
       {
         id: 'a3',
-        title: 'Marks',
-        desc: 'Joylarga belgi qo\'yish',
+        title: 'Text Objects – aqlli tanlash',
+        desc: 'ci" di{ yi( va h.k.',
         commands: [
-          { cmd: 'ma', desc: 'a belgisini qo\'yish' },
-          { cmd: '\'a', desc: 'a belgisiga o\'tish (qator boshi)' },
-          { cmd: '`a', desc: 'a belgisiga o\'tish (aniq joy)' },
-          { cmd: ':marks', desc: 'Barcha belgilarni ko\'rish' },
-          { cmd: '\'\'', desc: 'Oldingi joyga qaytish' }
+          { cmd: 'ci"', desc: 'Qo‘shtirnoq ichidagi matnni o‘zgartir' },
+          { cmd: 'di{', desc: 'Juft qavs ichidagi matnni o‘chir' },
+          { cmd: 'yi(', desc: 'Qavs ichidagi matnni nusxa' },
+          { cmd: 'vi"', desc: 'Qo‘shtirnoq ichidagi matnni belgilash' },
+          { cmd: 'ciw', desc: 'Kursor ostidagi so‘z (joyidan qatʼiy nazar)' }
         ],
-        doc: 'Marks - fayl ichida muhim joylarga belgi qo\'yish. Kichik harflar - joriy fayl, katta harflar - global.'
-      },
-      {
-        id: 'a4',
-        title: 'Tashqi buyruqlar',
-        desc: 'Shell buyruqlarini bajarish',
-        commands: [
-          { cmd: ':!ls', desc: 'ls buyrug\'ini bajarish' },
-          { cmd: ':r!date', desc: 'date natijasini faylga qo\'shish' },
-          { cmd: ':.!sh', desc: 'Joriy qatorni shell da bajarish' },
-          { cmd: ':10,20!sort', desc: '10-20 qatorlarni sort qilish' }
-        ],
-        doc: '! belgisi bilan tashqi shell buyruqlarini bajarishingiz va natijalarni Vim ga olib kirishingiz mumkin.'
+        doc: 'Bu kombinatsiyalarni bilgan odam – haqiqiy Vim foydalanuvchisi.'
       }
     ]
   },
-  neovim: {
-    title: 'Neovim - zamonaviy Vim',
-    editor: false,
-    lessons: [
-      {
-        id: 'nv1',
-        title: 'Neovim nima?',
-        desc: 'Vim ning zamonaviy versiyasi',
-        commands: [
-          { cmd: 'nvim', desc: 'Neovim ni ishga tushirish' },
-          { cmd: ':checkhealth', desc: 'Tizimni tekshirish' },
-          { cmd: ':version', desc: 'Versiyani ko\'rish' }
-        ],
-        doc: 'Neovim - Vim ning refaktorlangan versiyasi. Lua konfiguratsiyasi, LSP support, yanada yaxshi API va zamonaviy plugin lar.'
-      },
-      {
-        id: 'nv2',
-        title: 'Konfiguratsiya (Lua)',
-        desc: 'Lua bilan sozlash',
-        commands: [
-          { cmd: 'vim.opt.number = true', desc: 'Qator raqamlarini yoqish' },
-          { cmd: 'vim.opt.relativenumber = true', desc: 'Nisbiy raqamlar' },
-          { cmd: 'vim.g.mapleader = " "', desc: 'Leader tugmasini o\'rnatish' },
-          { cmd: 'vim.keymap.set("n", "<C-s>", ":w<CR>")', desc: 'Keymap qo\'shish' }
-        ],
-        doc: 'Neovim da Lua orqali konfiguratsiya yanada qulay. ~/.config/nvim/init.lua - asosiy fayl.'
-      },
-      {
-        id: 'nv3',
-        title: 'LSP (Language Server Protocol)',
-        desc: 'Zamonaviy IDE xususiyatlari',
-        commands: [
-          { cmd: 'gd', desc: 'Go to definition' },
-          { cmd: 'K', desc: 'Hover hujjat' },
-          { cmd: 'gr', desc: 'Go to references' },
-          { cmd: '<leader>rn', desc: 'Rename' },
-          { cmd: '<leader>ca', desc: 'Code action' }
-        ],
-        doc: 'LSP orqali Neovim da autocomplete, go to definition, linting va boshqa IDE xususiyatlari mavjud.'
-      },
-      {
-        id: 'nv4',
-        title: 'Plugin Manager',
-        desc: 'Plugin larni boshqarish',
-        commands: [
-          { cmd: ':Lazy', desc: 'Lazy.nvim UI ni ochish' },
-          { cmd: ':Lazy install', desc: 'Plugin larni o\'rnatish' },
-          { cmd: ':Lazy update', desc: 'Yangilash' },
-          { cmd: ':Lazy clean', desc: 'Tozalash' }
-        ],
-        doc: 'Lazy.nvim - mashhur plugin manager. Tez, lazy loading va qulay UI bilan.'
-      }
-    ]
-  },
+
   cheatsheet: {
-    title: 'Cheatsheet - Tez havolalar',
-    editor: false,
+    title: 'Cheatsheet – Tez eslatma',
+    editor: true,
     lessons: [
       {
         id: 'cs1',
-        title: 'Eng zarur buyruqlar',
-        desc: 'Har kuni ishlatiladigan buyruqlar',
+        title: 'Eng keraklı 10 buyruq',
+        desc: 'Bularni yodla – 90% ish bitadi',
         commands: [
-          { cmd: 'i / a / o', desc: 'Insert rejimga o\'tish' },
+          { cmd: 'i a o', desc: 'Yozish rejimiga kirish' },
           { cmd: 'ESC', desc: 'Normal rejimga qaytish' },
-          { cmd: 'dd', desc: 'Qatorni o\'chirish' },
-          { cmd: 'yy', desc: 'Qatorni nusxa olish' },
-          { cmd: 'p', desc: 'Joylashtirish' },
-          { cmd: 'u', desc: 'Bekor qilish' },
-          { cmd: ':w', desc: 'Saqlash' },
-          { cmd: ':q', desc: 'Chiqish' }
+          { cmd: 'dd yy p', desc: 'O‘chir, nusxa, joylashtir' },
+          { cmd: 'u Ctrl+r', desc: 'Undo / Redo' },
+          { cmd: '.', desc: 'Oxirgi amalni takrorlash' },
+          { cmd: ':w :q', desc: 'Saqlash va chiqish' },
+          { cmd: '*', desc: 'So‘zni qidirish' },
+          { cmd: 'ciw', desc: 'So‘zni o‘zgartirish' }
         ],
-        doc: 'Bu buyruqlar bilan 80% vazifalarni bajarishingiz mumkin. Bularni yoddan bilib oling!'
+        doc: 'Shu 10 tasini bil – Vimchi bo‘l!'
       },
       {
         id: 'cs2',
-        title: 'Kombinatsiyalar',
-        desc: 'Kuchli buyruq kombinatsiyalari',
+        title: 'Ninja kombinatsiyalar',
+        desc: 'Buni bilsang – hammaga ustunlik qilasan',
         commands: [
-          { cmd: 'ci"', desc: 'Qo\'shtirnoq ichidagi matnni o\'zgartirish' },
-          { cmd: 'di{', desc: 'Qavslar ichidagi matnni o\'chirish' },
-          { cmd: 'yi(', desc: 'Qavslar ichidagi matnni nusxa olish' },
-          { cmd: 'va"', desc: 'Qo\'shtirnoq bilan birga belgilash' },
-          { cmd: 'gUiw', desc: 'So\'zni katta harfga' },
-          { cmd: 'guiw', desc: 'So\'zni kichik harfga' }
+          { cmd: 'ci"', desc: 'Qo‘shtirnoq ichidagi matn' },
+          { cmd: 'di{', desc: 'Qavs ichidagi matn' },
+          { cmd: 'ciw', desc: 'So‘z o‘zgartirish' },
+          { cmd: 'gUiw', desc: 'So‘zni katta harfga' },
+          { cmd: 'guiw', desc: 'So‘zni kichik harfga' },
+          { cmd: '%', desc: 'Mos qavs ga sakrash' }
         ],
-        doc: 'Operator + Text Object kombinatsiyalari - Vim ning eng kuchli xususiyati. Masalan: ci" - change inside quotes.'
-      },
-      {
-        id: 'cs3',
-        title: 'Tezlik maslahatlari',
-        desc: 'Samaradorlikni oshirish',
-        commands: [
-          { cmd: '.', desc: 'Oxirgi o\'zgarishni takrorlash' },
-          { cmd: '*', desc: 'Kursor ostidagi so\'zni qidirish' },
-          { cmd: 'Ctrl+n', desc: 'So\'zni avtomatik to\'ldirish' },
-          { cmd: '%', desc: 'Mos keluvchi qavs/qatnov ga sakrash' },
-          { cmd: 'zt / zz / zb', desc: 'Ekranni yuqori/o\'rta/pastga o\'tkazish' }
-        ],
-        doc: 'Bu buyruqlarni o\'rganish ish tezligingizni sezilarli darajada oshiradi!'
+        doc: 'Bularni 1 haftada o‘rgan – ish tezliging 3 baravar oshadi.'
       }
     ]
   }
