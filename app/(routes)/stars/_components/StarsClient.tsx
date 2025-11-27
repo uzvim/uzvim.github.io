@@ -39,7 +39,7 @@ export default function StarsClient() {
 
           <header className="mb-6 lg:mb-8">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
-              Stars ⭐
+              Sevimlilar
             </h2>
             <p className="text-gray-600 text-sm">Saqlangan sevimli darslaringiz</p>
           </header>
