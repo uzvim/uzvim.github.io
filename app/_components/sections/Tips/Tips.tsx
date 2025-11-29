@@ -14,10 +14,6 @@ export default function Tips() {
         </li>
         <li className="flex items-start gap-2">
           <span className="text-yellow-600 font-bold shirnk-0 mt-1">•</span>
-          <span>Terminalda <code className="bg-white px-2 py-0.5 rounded text-xs lg:text-sm font-mono">vimtutor</code> buyrug&apos;ini ishga tushiring - bu eng yaxshi interaktiv dars</span>
-        </li>
-        <li className="flex items-start gap-2">
-          <span className="text-yellow-600 font-bold shirnk-0 mt-1">•</span>
           <span>Bir vaqtning o&apos;zida ko&apos;p buyruqlarni o&apos;rganmang - 2-3 tadan boshlang va ularni yaxshi o&apos;zlashtiring</span>
         </li>
         <li className="flex items-start gap-2">
