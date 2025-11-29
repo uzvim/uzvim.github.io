@@ -1,4 +1,7 @@
+import { resources } from "@/data/resources";
 import { Book } from "lucide-react";
+import Link from "next/link";
+
 
 export default function Resources() {
   return (
@@ -8,24 +11,18 @@ export default function Resources() {
         Qo&apos;shimcha manbalar
       </h3>
       <ul className="space-y-2 lg:space-y-3 text-sm lg:text-base text-gray-700">
-        <li className="flex items-start gap-2">
-          <span className="text-purple-600 font-bold shirnk-0 mt-1">•</span>
-          <span className="wrap-break-word"><strong className="font-semibold">vim.org</strong> - rasmiy Vim veb-sayti</span>
-        </li>
-        <li className="flex items-start gap-2">
-          <span className="text-purple-600 font-bold shirnk-0 mt-1">•</span>
-          <span className="wrap-break-word"><strong className="font-semibold">neovim.io</strong> - Neovim rasmiy sayti</span>
-        </li>
-        <li className="flex items-start gap-2">
-          <span className="text-purple-600 font-bold shirnk-0 mt-1">•</span>
-          <span className="wrap-break-word"><strong className="font-semibold">vimawesome.com</strong> - eng yaxshi Vim plugin lari</span>
-        </li>
-        <li className="flex items-start gap-2">
-          <span className="text-purple-600 font-bold shirnk-0 mt-1">•</span>
-          <span className="wrap-break-word"><strong className="font-semibold">vim.fandom.com</strong> - Vim wiki va qo&apos;llanmalar</span>
-        </li>
+        {resources.map((res) => (
+          <li key={res.name} className="flex items-start gap-2">
+            <span className="text-purple-600 font-bold shrink-0 mt-1">•</span>
+            <span className="wrap-break-word">
+              <Link href={res.href} target="_blank" rel="noopener noreferrer" className="font-semibold">
+                {res.name}
+              </Link>{" "}
+              - {res.description}
+            </span>
+          </li>
+        ))}
       </ul>
     </section>
-  )
+  );
 }
-
