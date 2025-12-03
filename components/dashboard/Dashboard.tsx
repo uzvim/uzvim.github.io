@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import content from "@/data/contents";
 import Tips from "../sections/Tips/Tips";
 import Resources from "../sections/Resources/Resources";
-import { Menu, Star } from "lucide-react";
+import { Github, Menu, Star } from "lucide-react";
 import Sidebar from "./sidebar/Sidebar";
 import Link from "next/link";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
@@ -71,8 +71,18 @@ const Dashboard: React.FC<DashboardProps> = ({ initialConcept }) => {
         <div className="w-10" />
       </div>
 
-      <div className="absolute top-2 right-3 cursor-pointer rounded-xl border-t border-gray-200 bg-[#309C34] p-3 transition-all hover:bg-[#2a7a2c]">
-        <Link href="/stars" className="flex items-center gap-2 text-sm text-white">
+      <div className="absolute top-2 right-3 flex gap-2.5 z-10">
+        <Link
+          href="https://github.com/uzvim"
+          target="_blank"
+          className="flex items-center gap-2 rounded-xl border-t border-gray-200 bg-[#309C34] p-3 px-4 transition-all hover:bg-[#2a7a2c] text-white"
+        >
+          <Github size={16} className="fill-white" />
+        </Link>
+        <Link
+          href="/stars"
+          className="flex items-center gap-2 rounded-xl border-t border-gray-200 bg-[#309C34] p-3 transition-all hover:bg-[#2a7a2c] text-white"
+        >
           <Star size={16} className="fill-white" />
           <span>{favorites.length}</span>
         </Link>
