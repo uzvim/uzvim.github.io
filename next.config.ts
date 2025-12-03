@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: undefined
+  productionBrowserSourceMaps: true,
 };
 
 export default nextConfig;

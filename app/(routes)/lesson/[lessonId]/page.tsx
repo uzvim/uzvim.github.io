@@ -1,24 +1,19 @@
-"use client";
-
-import React from "react";
 import { notFound } from "next/navigation";
-import dynamic from "next/dynamic";
 import concepts from "@/data/concepts";
+import DashboardWrapper from "./_components/DashboardWrapper";
 
-const Dashboard = dynamic(() => import("@/components/dashboard/Dashboard"), {
-  ssr: false,
-});
+interface LessonPageProps {
+  params: { lessonId: string } | Promise<{ lessonId: string }>;
+}
 
-export default function LessonPage({
-  params,
-}: {
-  params: Promise<{ lessonId: string }>;
-}) {
-  const { lessonId } = React.use(params);
+export default async function LessonPage({ params }: LessonPageProps) {
+  const { lessonId } = "then" in params ? await params : params;
 
-  const exists = concepts.some((c) => c.id === lessonId);
+  if (!concepts.some(c => c.id === lessonId)) return notFound();
 
-  if (!exists) return notFound();
+  return <DashboardWrapper initialConcept={lessonId} />;
+}
 
-  return <Dashboard initialConcept={lessonId} />;
+export function generateStaticParams() {
+  return concepts.map(c => ({ lessonId: c.id }));
 }
