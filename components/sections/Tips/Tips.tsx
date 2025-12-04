@@ -11,7 +11,7 @@ export default function Tips() {
         <li className="flex items-start gap-2">
           <span className="shirnk-0 mt-1 font-bold text-yellow-600">•</span>
           <span>
-            Har kuni 15-20 daqiqa Vim bilan ishlang - bu mushaqqatli amaliyot talab qiladi
+            Har kuni 15-20 daqiqa Vim bilan ishlang - bu mashaqqatli amaliyot talab qiladi
           </span>
         </li>
         <li className="flex items-start gap-2">
